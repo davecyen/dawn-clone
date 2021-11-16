@@ -47,7 +47,7 @@
         "e51b6709-26db-41b6-881b-39fb6d2a3f69": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "{% assign outofstock = false %}\n{% assign current = product.selected_or_first_available_variant %}\n{% for variant in product.variants %}\n  {% unless variant.available %}\n    {% assign outofstock = true %}\n  {% endunless %}\n{% endfor %}\n\n{% if outofstock == true %}\n  <p style=\"color:#333333; background-color:#c9e5eb; padding:10px;\"><strong>Restock Date:<\/strong><br\/>{{ current }} is currently on backorder. Estimated restock date: {{ variant.metafields.my_fields.restock_date}} .<\/p>\n{% endif %}\n  <\/div>"
+            "custom_liquid": "{% assign outofstock = false %}\n{% assign current = product.selected_or_first_available_variant %}\n{% for variant in product.variants %}\n  {% unless variant.available %}\n    {% assign outofstock = true %}\n  {% endunless %}\n{% endfor %}\n\n{% if outofstock == true %}\n  <p style=\"color:#333333; background-color:#c9e5eb; padding:10px;\"><strong>Restock Date:<\/strong><br\/>{{ current.option2 }} in {{ current.option1 }} color is currently on  \n backorder. Estimated restock date: {{ current.metafields.my_fields.restock_date}} .<\/p>\n{% endif %}\n  <\/div>"
           }
         },
         "description": {
